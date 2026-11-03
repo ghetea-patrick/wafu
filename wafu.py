@@ -146,7 +146,7 @@ def _wrapfunc(
     funcname = _funcname(function)
     wrapper.__name__     = funcname
     wrapper.__qualname__ = funcname
-    wrapper.__wrapped__  = function #HACK
+    wrapper.__wrapped__  = function
     return wrapper
 
 
@@ -168,7 +168,7 @@ class _middleman:
         if not isinstance(result, wavefunc):
             raise errorstring.middleman_result(self.operator, result)
 
-        return self.function | result #HACK
+        return self.function | result
 
     def __str__(self) -> str:
         return f"{self.opername}({self.function})"
